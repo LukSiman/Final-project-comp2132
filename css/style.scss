@@ -150,90 +150,7 @@ div.retroContainer {
 ID SELECTORS 
 **********************************************/
 
-#retroPopup {
-	border-radius: 15px;
-	padding: 15px;
-	background-color: rgb(35, 16, 119, 0.9);
-	border: 10px double rgb(76, 54, 172);
-	box-shadow: 2px 2px 5px 2px rgb(89, 99, 185), 2px 2px 5px 2px rgb(89, 99, 185) inset;
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	opacity: 0;
-}
 
-#retroPopup>:first-child {
-	display: flex;
-	justify-content: space-between;
-}
-
-#retroPopup>p:last-child {
-	margin-bottom: 0px;
-}
-
-#closePopup {
-	width: 35px;
-	height: 35px;
-	text-align: center;
-	line-height: 29px;
-	border: 3px solid rgb(175, 97, 158);
-	border-radius: 5px;
-	color: rgb(255, 255, 255);
-	background-color: rgb(136, 19, 97);
-}
-
-#closePopup:hover {
-	transform: scale(1.05);
-	cursor: pointer;
-}
-
-#closePopup:active {
-	background-color: rgb(161, 55, 161);
-}
-
-#positioning {
-	position: relative;
-}
-
-#imageContainer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 30px;
-	border: 10px double rgb(136, 22, 92);
-	box-shadow: 2px 2px 5px 2px rgb(156, 48, 115), 2px 2px 5px 2px rgb(156, 48, 115) inset;
-	border-radius: 15px;
-	background-color: white;
-}
-
-#imageContainer>img {
-	max-width: 100%;
-}
-
-#animationButtons {
-	display: flex;
-	gap: 10px;
-}
-
-#start, #stop {
-	padding: 5px;
-	border: 3px solid rgb(175, 97, 158);
-	border-radius: 5px;
-	color: rgb(255, 255, 255);
-	background-color: rgb(136, 19, 97);
-}
-
-#start:hover, #stop:hover {
-	cursor: pointer;
-	transform: scale(1.05);
-}
-
-#start:active, #stop:active {
-	background-color: rgb(161, 55, 161);
-}
 
 /**********************************************
 MEDIA 
@@ -247,10 +164,6 @@ MEDIA
 		padding-right: 20px;
 		padding-right: 20px;
 	}
-
-	#imageContainer {
-		padding: 20px;
-	}
 }
 
 @media screen and (max-width: 600px) {
@@ -258,12 +171,6 @@ MEDIA
 	h1 {
 		font-size: 12vw;
 		padding: 10px
-	}
-
-	#imageContainer {
-		padding: 10px;
-		padding-top: 50px;
-		padding-bottom: 50px;
 	}
 }
 
@@ -280,14 +187,6 @@ MEDIA
 	body {
 		background-size: cover;
 	}
-
-	#imageContainer {
-		padding: 20px;
-	}
-
-	#retroPopup {
-		width: 300px;
-	}
 }
 
 @media screen and (max-width: 450px) {
@@ -303,9 +202,6 @@ MEDIA
 }
 
 @media screen and (max-width: 400px) {
-	#retroPopup {
-		width: 200px;
-	}
 }
 
 @media print {
