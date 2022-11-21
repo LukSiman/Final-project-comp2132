@@ -6,7 +6,10 @@
 /**********************************************
 GLOBAL VARIABLES
 **********************************************/
-
+$outerBorder: 10px double rgb(163, 65, 147);
+$outerShadow: 2px 2px 5px 2px rgb(219, 114, 202), 2px 2px 5px 2px rgb(219, 114, 202) inset;
+$innerBorder: 10px double rgb(76, 54, 172);
+$innerShadow: 2px 2px 5px 2px rgb(89, 99, 185), 2px 2px 5px 2px rgb(89, 99, 185) inset;
 
 /**********************************************
 HTML SELECTORS
@@ -15,7 +18,9 @@ html {
 	box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
 	box-sizing: inherit;
 }
 
@@ -61,7 +66,8 @@ h3 {
 	font-size: 1.5em;
 }
 
-h2, h3 {
+h2,
+h3 {
 	background-image: linear-gradient(rgb(255, 255, 255), rgb(166, 184, 0));
 	background-size: 100%;
 	background-repeat: repeat;
@@ -118,7 +124,8 @@ footer {
 	padding: 15px;
 }
 
-input, select {
+input,
+select {
 	padding: 5px;
 	margin: 0px;
 	border: 3px solid rgb(182, 172, 32);
@@ -131,8 +138,8 @@ CLASS SELECTORS
 **********************************************/
 
 .retroContainer {
-	border: 10px double rgb(163, 65, 147);
-	box-shadow: 2px 2px 5px 2px rgb(219, 114, 202), 2px 2px 5px 2px rgb(219, 114, 202) inset;
+	border: $outerBorder;
+	box-shadow: $outerShadow;
 	border-radius: 15px;
 	background-color: rgba(19, 4, 19, 0.85);
 }
@@ -150,7 +157,14 @@ div.retroContainer {
 ID SELECTORS 
 **********************************************/
 
+#title {
+	text-align: center;
+}
 
+#gameBoard {
+	display: flex;
+	justify-content: space-between;
+}
 
 /**********************************************
 MEDIA 
@@ -201,12 +215,11 @@ MEDIA
 	}
 }
 
-@media screen and (max-width: 400px) {
-}
+@media screen and (max-width: 400px) {}
 
 @media print {
 	a[href^="http"]:after {
-		content: " URL: ("attr(href) ") ";
+		content: " URL: (" attr(href) ") ";
 	}
 
 	header {
@@ -218,7 +231,10 @@ MEDIA
 		page-break-after: avoid;
 	}
 
-	body, h1, section, aside {
+	body,
+	h1,
+	section,
+	aside {
 		color: black;
 	}
 
@@ -230,12 +246,19 @@ MEDIA
 		color: black;
 	}
 
-	table, th, td {
+	table,
+	th,
+	td {
 		overflow: visible;
 		border: 1px solid black;
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		color: black;
 		page-break-after: avoid;
 	}
