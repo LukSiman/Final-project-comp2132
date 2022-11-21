@@ -23,8 +23,39 @@
         <section class="retroContainer">
             <h2 id="title">DICE WARS!</h2>
             <div id="gameBoard">
-                <div id="player">Test</div>
-                <div id="computer">Test</div>
+                <div id="players">
+                    <div class="player">
+                        <div class="characterHeader">
+                            <img class="portrait" src="images/default.png" alt="Player's character">
+                            <p>Human player</p>
+                        </div>
+
+                        <p id="humanScore">Total Score: 0</p>
+
+                        <div class="diceContainer">
+                            2 images of dice
+                            <p>Round score: 0</p>
+                        </div>
+                    </div>
+                    <div class="player">
+                        <div class="characterHeader">
+                            <img class="portrait" src="images/default.png" alt="Player's character">
+                            <p>Computer</p>
+                        </div>
+
+                        <p id="computerScore">Total Score: 0</p>
+
+                        <div class="diceContainer">
+                            2 images of dice
+                            <p>Round score: 0</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="buttons">
+                    <button>Roll</button>
+                    <button>Start new game</button>
+                </div>
             </div>
         </section>
     </main>

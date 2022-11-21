@@ -6,10 +6,33 @@
 /**********************************************
 GLOBAL VARIABLES
 **********************************************/
-$outerBorder: 10px double rgb(163, 65, 147);
-$outerShadow: 2px 2px 5px 2px rgb(219, 114, 202), 2px 2px 5px 2px rgb(219, 114, 202) inset;
-$innerBorder: 10px double rgb(76, 54, 172);
-$innerShadow: 2px 2px 5px 2px rgb(89, 99, 185), 2px 2px 5px 2px rgb(89, 99, 185) inset;
+
+$pinkBorder: rgb(163, 65, 147);
+$pinkShadow: rgb(219, 114, 202);
+$blueBorder: rgb(76, 54, 172);
+$blueShadow: rgb(89, 99, 185);
+
+/**********************************************
+MIXINS
+**********************************************/
+
+@mixin retroBorder($borderColor, $borderRadius, $shadowColor) {
+	border: 10px double $borderColor;
+	border-radius: $borderRadius;
+	box-shadow: 2px 2px 5px 2px $shadowColor, 2px 2px 5px 2px $shadowColor inset;
+	padding: 15px;
+}
+
+@mixin specialText($textColorTop, $textColorBottom) {
+	background-image: linear-gradient($textColorTop, $textColorBottom);
+	background-size: 100%;
+	background-repeat: repeat;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+}
 
 /**********************************************
 HTML SELECTORS
@@ -44,16 +67,8 @@ body {
 
 h1 {
 	font-size: 4em;
-	padding: 15px;
 	text-align: center;
-	background-image: linear-gradient(rgb(228, 196, 18), rgb(207, 37, 156));
-	background-size: 100%;
-	background-repeat: repeat;
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	-moz-background-clip: text;
-	-moz-text-fill-color: transparent;
+	@include specialText(rgb(228, 196, 18), rgb(207, 37, 156));
 }
 
 h2 {
@@ -68,14 +83,7 @@ h3 {
 
 h2,
 h3 {
-	background-image: linear-gradient(rgb(255, 255, 255), rgb(166, 184, 0));
-	background-size: 100%;
-	background-repeat: repeat;
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	-moz-background-clip: text;
-	-moz-text-fill-color: transparent;
+	@include specialText(rgb(255, 255, 255), rgb(166, 184, 0));
 }
 
 p {
@@ -84,7 +92,6 @@ p {
 
 section {
 	margin-bottom: 20px;
-	padding: 15px;
 }
 
 ul {
@@ -120,10 +127,6 @@ a:active {
 	color: rgb(221, 43, 43);
 }
 
-footer {
-	padding: 15px;
-}
-
 input,
 select {
 	padding: 5px;
@@ -138,10 +141,8 @@ CLASS SELECTORS
 **********************************************/
 
 .retroContainer {
-	border: $outerBorder;
-	box-shadow: $outerShadow;
-	border-radius: 15px;
 	background-color: rgba(19, 4, 19, 0.85);
+	@include retroBorder($pinkBorder, 15px, $pinkShadow);
 }
 
 .retroContainer>p:last-child {
@@ -153,17 +154,59 @@ div.retroContainer {
 	margin-bottom: 20px;
 }
 
+.portrait {
+	max-width: 50px;
+}
+
+.characterHeader {
+	display: flex;
+	align-items: center;
+	column-gap: 20px;
+	border-bottom: 10px double $blueBorder;
+	box-shadow: 0px 5px 5px 0px $blueShadow;
+	margin-bottom: 10px;
+	padding: 5px;
+}
+
+.diceContainer {
+	@include retroBorder(rgb(175, 17, 30), 15px, rgb(177, 63, 72));
+	margin: 10px;
+}
+
+.player{
+	text-align: center;
+	@include retroBorder($blueBorder, 15px, $blueShadow);
+	padding: 0px;
+	width: 320px;
+}
+
 /**********************************************
 ID SELECTORS 
 **********************************************/
 
 #title {
 	text-align: center;
+	@include specialText(rgb(207, 221, 16), rgb(173, 2, 2));
+	font-size: 3em;
 }
 
 #gameBoard {
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
+	row-gap: 30px;
+	align-items: center;
+	padding: 15px;
+}
+
+#players{
+	display: flex;
+	justify-content: center;
+}
+
+#humanScore, #computerScore{
+	font-size: 1.5em;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 /**********************************************
