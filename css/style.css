@@ -83,7 +83,7 @@ section {
 
 ul {
   list-style: disc;
-  margin-left: 15px;
+  margin-left: 20px;
 }
 
 ol {
@@ -129,11 +129,11 @@ button {
   background-color: rgb(136, 19, 97);
   padding: 15px;
 }
-button:first-of-type {
-  margin-right: 10px;
-}
-button:last-of-type {
-  margin-left: 10px;
+
+#buttons {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
 }
 
 button:hover {
@@ -272,12 +272,18 @@ ID SELECTORS
   font-size: 1.5em;
   padding-top: 10px;
   padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #humanRound,
 #computerRound {
   font-size: 1.3em;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #round {
@@ -346,6 +352,12 @@ MEDIA
     padding-right: 20px;
   }
 }
+@media screen and (max-width: 680px) {
+  #humanRound,
+#computerRound {
+    height: 52px;
+  }
+}
 @media screen and (max-width: 660px) {
   .diceFaces {
     -moz-column-gap: 10px;
@@ -380,9 +392,14 @@ MEDIA
   #gameBoard {
     padding: 0px;
   }
+  #buttons button {
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 550px) {
   #humanScore,
 #computerScore {
-    font-size: 1.3em;
+    height: 80px;
   }
 }
 @media screen and (max-width: 500px) {
@@ -425,6 +442,21 @@ MEDIA
     padding-top: 10px;
     padding-bottom: 10px;
   }
+  #objective {
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 430px) {
+  #humanScore,
+#computerScore {
+    height: 70px;
+  }
+}
+@media screen and (max-width: 400px) {
+  #humanScore,
+#computerScore {
+    font-size: 1.3em;
+  }
 }
 @media screen and (max-width: 350px) {
   .characterHeader {
@@ -441,6 +473,18 @@ MEDIA
     padding-top: 5px;
     padding-bottom: 5px;
     margin-bottom: 0px;
+  }
+  #humanRound,
+#computerRound {
+    font-size: 1.2em;
+  }
+  #buttons {
+    -moz-column-gap: 5px;
+         column-gap: 5px;
+  }
+  #buttons button {
+    padding: 5px;
+    font-size: 1em;
   }
 }
 @media print {

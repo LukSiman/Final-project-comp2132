@@ -96,7 +96,7 @@ section {
 
 ul {
 	list-style: disc;
-	margin-left: 15px;
+	margin-left: 20px;
 }
 
 ol {
@@ -141,14 +141,11 @@ button {
 	color: rgb(255, 255, 255);
 	background-color: rgb(136, 19, 97);
 	padding: 15px;
+}
 
-	&:first-of-type {
-		margin-right: 10px;
-	}
-
-	&:last-of-type {
-		margin-left: 10px;
-	}
+#buttons {
+	display: flex;
+	column-gap: 10px;
 }
 
 button:hover {
@@ -270,12 +267,18 @@ ID SELECTORS
 	font-size: 1.5em;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 #humanRound,
 #computerRound {
 	font-size: 1.3em;
 	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 #round {
@@ -347,6 +350,15 @@ MEDIA
 	}
 }
 
+
+@media screen and (max-width: 680px) {
+
+	#humanRound,
+	#computerRound {
+		height: 52px;
+	}
+}
+
 @media screen and (max-width: 660px) {
 	.diceFaces {
 		column-gap: 10px;
@@ -384,13 +396,22 @@ MEDIA
 		}
 	}
 
-	#gameBoard{
+	#gameBoard {
 		padding: 0px;
 	}
 
+	#buttons {
+		button {
+			padding: 10px;
+		}
+	}
+}
+
+@media screen and (max-width: 550px) {
+
 	#humanScore,
 	#computerScore {
-		font-size: 1.3em;
+		height: 80px;
 	}
 }
 
@@ -443,10 +464,30 @@ MEDIA
 		row-gap: 10px;
 	}
 
-	.retroContainer{
+	.retroContainer {
 		padding: 5px;
 		padding-top: 10px;
 		padding-bottom: 10px;
+	}
+
+	#objective {
+		padding: 10px;
+	}
+}
+
+@media screen and (max-width: 430px) {
+
+	#humanScore,
+	#computerScore {
+		height: 70px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+
+	#humanScore,
+	#computerScore {
+		font-size: 1.3em;
 	}
 }
 
@@ -459,7 +500,7 @@ MEDIA
 		}
 	}
 
-	.diceContainer{
+	.diceContainer {
 		margin: 5px;
 	}
 
@@ -468,6 +509,20 @@ MEDIA
 		padding-top: 5px;
 		padding-bottom: 5px;
 		margin-bottom: 0px;
+	}
+
+	#humanRound,
+	#computerRound {
+		font-size: 1.2em;
+	}
+
+	#buttons {
+		column-gap: 5px;
+
+		button {
+			padding: 5px;
+			font-size: 1em;
+		}
 	}
 }
 
