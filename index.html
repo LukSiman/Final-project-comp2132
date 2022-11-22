@@ -28,7 +28,7 @@
                 <div id="players">
                     <div class="player" id="humanPlayer">
                         <div class="characterHeader">
-                            <img class="portrait" src="images/default.png" alt="Player's character">
+                            <img class="portrait" src="images/robotFace.png" alt="Player's character">
                             <p id="humanName">Player name</p>
                         </div>
 
@@ -44,7 +44,7 @@
                     </div>
                     <div class="player" id="computerPlayer">
                         <div class="characterHeader">
-                            <img class="portrait" src="images/default.png" alt="Player's character">
+                            <img class="portrait" src="images/robotHead.png" alt="Computer's character">
                             <p id="computerName">Computer name</p>
                         </div>
 
@@ -60,11 +60,36 @@
                     </div>
                 </div>
 
+                <p id="round">Round: 0</p>
+
                 <div id="buttons">
-                    <button id="roll">Roll</button>
-                    <button id="newGame">Start new game</button>
-                    <button id="changeCharacter">Change character</button>
+                    <button class="disabled" disabled id="roll">Roll dice</button>
+                    <button class="disabled" disabled id="newGame">New game</button>
+                    <button class="disabled" disabled id="changeCharacter">Change character</button>
                 </div>
+
+                <aside id="endGamePopup">
+                </aside>
+
+                <aside id="characterSelect">
+                    <h3>Choose your character</h3>
+                    <div id="characterOptions">
+                        <img src="images/spiritedFace.png" alt="face of a spirit">
+                        <img src="images/pandaFace.png" alt="face of a panda">
+                        <img src="images/zombieFace.png" alt="face of a zombie">
+                        <img src="images/robotFace.png" alt="face of a robot">
+                        <img src="images/helmetFace.png" alt="face of a helmet">
+                        <img src="images/clownFace.png" alt="face of a clown">
+                    </div>
+                    <form>
+                        <label for="name">Player name:</label>
+                        <input type="text" id="name" name="name">
+                      </form>
+
+                      <p id="warning"></p>
+
+                      <button id="select">Select</button>
+                </aside>
             </div>
         </section>
 

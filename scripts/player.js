@@ -12,6 +12,10 @@ class Player{
         return this.name;
     }
 
+    setName(name){
+        this.name = name;
+    }
+
     getRoundScore(){
         return this.roundScore;
     }
