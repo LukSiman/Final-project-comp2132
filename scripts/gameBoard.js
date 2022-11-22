@@ -55,6 +55,13 @@ function clearImageSelection() {
     });
 }
 
+//prevent default enter submit functionality
+document.getElementById("form").onkeydown = function (e) {
+    if(e.key == 13 || e.key == "Enter"){
+        e.preventDefault();
+    }
+}
+
 selectCharacter.addEventListener("click", function () {
     const chosenName = document.getElementById("name");
     let warning = document.getElementById("warning");
@@ -166,7 +173,7 @@ function resetGame() {
     rollButton.classList.remove("disabled");
     changeCharacter.disabled = false;
     changeCharacter.classList.remove("disabled");
-    
+
     endGamePopup.innerHTML = "";
     endGamePopup.style.transition = "opacity 0s";
     endGamePopup.style.opacity = 0;
@@ -182,7 +189,7 @@ function resetGame() {
 
 changeCharacter.addEventListener("click", changePlayerCharacter);
 
-function changePlayerCharacter(){
+function changePlayerCharacter() {
     characterSelectScreen.style.transition = "opacity 1s";
     characterSelectScreen.style.opacity = 1;
 }
