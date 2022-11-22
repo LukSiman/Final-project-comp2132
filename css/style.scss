@@ -142,11 +142,11 @@ button {
 	background-color: rgb(136, 19, 97);
 	padding: 15px;
 
-	&:first-of-type{
+	&:first-of-type {
 		margin-right: 10px;
 	}
 
-	&:last-of-type{
+	&:last-of-type {
 		margin-left: 10px;
 	}
 }
@@ -193,12 +193,12 @@ div.retroContainer {
 	margin-bottom: 10px;
 	padding: 5px;
 	padding-left: 10px;
-	font-size: 1.6em;
 }
 
 .characterHeader {
 	p {
 		margin: 0px;
+		font-size: 1.6em;
 	}
 }
 
@@ -232,11 +232,11 @@ div.retroContainer {
 	margin-top: 20px;
 }
 
-.selectedImage{
+.selectedImage {
 	border-bottom: 2px solid white;
 }
 
-.disabled{
+.disabled {
 	background-color: rgb(173, 2, 2);
 }
 
@@ -283,7 +283,8 @@ ID SELECTORS
 	margin-bottom: 0px;
 }
 
-#endGamePopup, #characterSelect {
+#endGamePopup,
+#characterSelect {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -296,21 +297,21 @@ ID SELECTORS
 	align-items: center;
 }
 
-#characterSelect{
+#characterSelect {
 	opacity: 1;
 	row-gap: 25px;
 }
 
-#characterOptions{
+#characterOptions {
 	display: flex;
 	column-gap: 10px;
 
-	img:hover{
+	img:hover {
 		cursor: pointer;
 		transform: scale(1.05);
 	}
 
-	img:active{
+	img:active {
 		transform: scale(1.15);
 	}
 }
@@ -327,7 +328,7 @@ ID SELECTORS
 	font-family: 'Silkscreen', 'Russo One', sans-serif;
 }
 
-#warning{
+#warning {
 	color: rgb(255, 0, 0);
 	display: none;
 }
@@ -346,11 +347,50 @@ MEDIA
 	}
 }
 
+@media screen and (max-width: 660px) {
+	.diceFaces {
+		column-gap: 10px;
+	}
+
+	.diceContainer {
+		padding: 10px;
+	}
+
+	.characterHeader {
+		column-gap: 10px;
+
+		p {
+			font-size: 1.4em;
+		}
+	}
+}
+
 @media screen and (max-width: 600px) {
 
 	h1 {
 		font-size: 12vw;
 		padding: 10px
+	}
+
+	.portrait {
+		max-width: 48px;
+	}
+
+	.characterHeader {
+		column-gap: 5px;
+
+		p {
+			font-size: 1.3em;
+		}
+	}
+
+	#gameBoard{
+		padding: 0px;
+	}
+
+	#humanScore,
+	#computerScore {
+		font-size: 1.3em;
 	}
 }
 
@@ -367,6 +407,20 @@ MEDIA
 	body {
 		background-size: cover;
 	}
+
+	.diceContainer {
+		padding: 5px;
+	}
+
+	.portrait {
+		max-width: 32px;
+	}
+
+	.characterHeader {
+		p {
+			font-size: 1.2em;
+		}
+	}
 }
 
 @media screen and (max-width: 450px) {
@@ -379,9 +433,43 @@ MEDIA
 		padding-right: 10px;
 		padding-right: 10px;
 	}
+
+	.characterHeader {
+		flex-direction: column;
+	}
+
+	.diceFaces {
+		flex-direction: column;
+		row-gap: 10px;
+	}
+
+	.retroContainer{
+		padding: 5px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
 }
 
-@media screen and (max-width: 400px) {}
+@media screen and (max-width: 350px) {
+	.characterHeader {
+		margin-bottom: 5px;
+
+		p {
+			font-size: 1.1em;
+		}
+	}
+
+	.diceContainer{
+		margin: 5px;
+	}
+
+	#humanScore,
+	#computerScore {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		margin-bottom: 0px;
+	}
+}
 
 @media print {
 	a[href^="http"]:after {

@@ -181,11 +181,11 @@ div.retroContainer {
   margin-bottom: 10px;
   padding: 5px;
   padding-left: 10px;
-  font-size: 1.6em;
 }
 
 .characterHeader p {
   margin: 0px;
+  font-size: 1.6em;
 }
 
 .diceContainer {
@@ -285,7 +285,8 @@ ID SELECTORS
   margin-bottom: 0px;
 }
 
-#endGamePopup, #characterSelect {
+#endGamePopup,
+#characterSelect {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -345,10 +346,43 @@ MEDIA
     padding-right: 20px;
   }
 }
+@media screen and (max-width: 660px) {
+  .diceFaces {
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+  }
+  .diceContainer {
+    padding: 10px;
+  }
+  .characterHeader {
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+  }
+  .characterHeader p {
+    font-size: 1.4em;
+  }
+}
 @media screen and (max-width: 600px) {
   h1 {
     font-size: 12vw;
     padding: 10px;
+  }
+  .portrait {
+    max-width: 48px;
+  }
+  .characterHeader {
+    -moz-column-gap: 5px;
+         column-gap: 5px;
+  }
+  .characterHeader p {
+    font-size: 1.3em;
+  }
+  #gameBoard {
+    padding: 0px;
+  }
+  #humanScore,
+#computerScore {
+    font-size: 1.3em;
   }
 }
 @media screen and (max-width: 500px) {
@@ -361,6 +395,15 @@ MEDIA
   body {
     background-size: cover;
   }
+  .diceContainer {
+    padding: 5px;
+  }
+  .portrait {
+    max-width: 32px;
+  }
+  .characterHeader p {
+    font-size: 1.2em;
+  }
 }
 @media screen and (max-width: 450px) {
   h1 {
@@ -369,6 +412,35 @@ MEDIA
   body {
     padding-right: 10px;
     padding-right: 10px;
+  }
+  .characterHeader {
+    flex-direction: column;
+  }
+  .diceFaces {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  .retroContainer {
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .characterHeader {
+    margin-bottom: 5px;
+  }
+  .characterHeader p {
+    font-size: 1.1em;
+  }
+  .diceContainer {
+    margin: 5px;
+  }
+  #humanScore,
+#computerScore {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 0px;
   }
 }
 @media print {
