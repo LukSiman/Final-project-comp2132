@@ -83,15 +83,11 @@ section {
 
 ul {
   list-style: disc;
+  margin-left: 15px;
 }
 
 ol {
   list-style: decimal;
-}
-
-li {
-  margin-right: 20px;
-  margin-bottom: 5px;
 }
 
 a {
@@ -158,12 +154,21 @@ div.retroContainer {
   padding: 5px;
 }
 
+.characterHeader > p {
+  margin: 0px;
+}
+
 .diceContainer {
   border: 10px double rgb(175, 17, 30);
   border-radius: 15px;
   box-shadow: 2px 2px 5px 2px rgb(177, 63, 72), 2px 2px 5px 2px rgb(177, 63, 72) inset;
   padding: 15px;
   margin: 10px;
+}
+
+.diceContainer > p:last-child {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .player {
@@ -173,7 +178,29 @@ div.retroContainer {
   box-shadow: 2px 2px 5px 2px rgb(89, 99, 185), 2px 2px 5px 2px rgb(89, 99, 185) inset;
   padding: 15px;
   padding: 0px;
-  width: 320px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.diceFace {
+  max-width: 140px;
+  overflow: hidden;
+  border: 10px double rgb(163, 65, 147);
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px 2px rgb(219, 114, 202), 2px 2px 5px 2px rgb(219, 114, 202) inset;
+  padding: 15px;
+  border-width: 5px;
+  padding: 0px;
+}
+
+.diceFaces {
+  display: flex;
+  justify-content: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 /**********************************************
@@ -203,12 +230,20 @@ ID SELECTORS
 #players {
   display: flex;
   justify-content: center;
+  width: 100%;
+  max-width: 100%;
 }
 
-#humanScore, #computerScore {
+#humanScore,
+#computerScore {
   font-size: 1.5em;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+#humanRound, #computerRound {
+  font-size: 1.3em;
+  margin-bottom: 10px;
 }
 
 /**********************************************

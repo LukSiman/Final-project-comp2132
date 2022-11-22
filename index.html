@@ -33,8 +33,11 @@
                         <p id="humanScore">Total Score: 0</p>
 
                         <div class="diceContainer">
-                            2 images of dice
-                            <p>Round score: 0</p>
+                            <div class="diceFaces">
+                                <img class="diceFace" src="images/dice6.png" alt="a picture of a dice face">
+                                <img class="diceFace" src="images/dice5.png" alt="a picture of a dice face">
+                            </div>
+                            <p id="humanRound">Round score: 0</p>
                         </div>
                     </div>
                     <div class="player">
@@ -46,17 +49,46 @@
                         <p id="computerScore">Total Score: 0</p>
 
                         <div class="diceContainer">
-                            2 images of dice
-                            <p>Round score: 0</p>
+                            <div class="diceFaces">
+                                <img class="diceFace" src="images/dice6.png" alt="a picture of a dice face">
+                                <img class="diceFace" src="images/dice5.png" alt="a picture of a dice face">
+                            </div>
+                            <p id="computerRound">Round score: 0</p>
                         </div>
                     </div>
                 </div>
-                
+
                 <div id="buttons">
                     <button>Roll</button>
                     <button>Start new game</button>
                 </div>
             </div>
+        </section>
+
+        <section class="retroContainer">
+            <h2>Rules:</h2>
+            <ul>
+                <li>
+                    Both human player and computer roll a pair of dice 3 times.
+                </li>
+                <li>
+                    After the third roll of the dice the player with highest score wins.
+                </li>
+                <li>
+                    If any of the players two dice comes up as a 1 then the score for that round for the player is 0.
+                    eg: if the player rolls a 6 and 1, they get a score of 0.
+                </li>
+                <li>
+                    If the player rolls a pair of the same numbers then the players score is the total of the two
+                    dice times 2.
+                    eg: if he player rolls 5 and 5, they get a score of (5+5)*2=20.
+                </li>
+                <li>
+                    If the player rolls any other combination of dice other than the ones mentioned above then the
+                    players score is the total value of the two dice,
+                    eg: player rolls a 3 and 2, player gets a score of 3+2=5.
+                </li>
+            </ul>
         </section>
     </main>
 
