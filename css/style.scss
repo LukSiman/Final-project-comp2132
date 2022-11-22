@@ -166,18 +166,15 @@ div.retroContainer {
 	padding: 5px;
 }
 
-.characterHeader>p {
-	margin: 0px;
+.characterHeader {
+	p {
+		margin: 0px;
+	}
 }
 
 .diceContainer {
 	@include retroBorder(rgb(175, 17, 30), 15px, rgb(177, 63, 72));
 	margin: 10px;
-}
-
-.diceContainer>p:last-child {
-	padding-bottom: 0px;
-	margin-bottom: 0px;
 }
 
 .player {
@@ -237,7 +234,8 @@ ID SELECTORS
 	padding-bottom: 10px;
 }
 
-#humanRound, #computerRound{
+#humanRound,
+#computerRound {
 	font-size: 1.3em;
 	margin-bottom: 10px;
 }
