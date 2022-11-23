@@ -139,6 +139,7 @@ function changePlayerCharacter() {
     //TODO: CHANGE TO ANIMATION!!!!!!!!!!!
     characterSelectScreen.style.transition = "opacity 1s";
     characterSelectScreen.style.opacity = 1;
+    characterSelectScreen.style.display = "flex";
 }
 
 //rolls the dice
@@ -212,6 +213,7 @@ function endGame() {
     //TODO: CHANGE TO ANIMATION!!!!!!!!!!!
     endGamePopup.style.transition = "opacity 2s";
     endGamePopup.style.opacity = 1;
+    endGamePopup.style.display = "flex";
 
     //determines who won or if it was a draw
     if (humanPlayer.getTotalScore() > computerPlayer.getTotalScore()) {
