@@ -23,7 +23,12 @@
         </section>
 
         <section class="retroContainer">
-            <h2 id="title">DICE WARS!</h2>
+            <div id="titleHeader">
+                <img id="spinDiceOne" src="images/dice5.png" alt="A spinning dice">
+                <h2 id="title">DICE WARS!</h2>
+                <img id="spinDiceTwo" src="images/dice5.png" alt="A spinning dice">
+            </div>
+
             <div id="gameBoard">
                 <div id="players">
                     <div class="player">
@@ -36,8 +41,10 @@
 
                         <div class="diceContainer">
                             <div class="diceFaces">
-                                <img id="humanDiceOne" class="diceFace" src="images/dice1.png" alt="a picture of a dice face">
-                                <img id="humanDiceTwo" class="diceFace" src="images/dice1.png" alt="a picture of a dice face">
+                                <img id="humanDiceOne" class="diceFace" src="images/dice1.png"
+                                    alt="a picture of a dice face">
+                                <img id="humanDiceTwo" class="diceFace" src="images/dice1.png"
+                                    alt="a picture of a dice face">
                             </div>
                             <p id="humanRound">Round score: 0</p>
                         </div>
@@ -52,8 +59,10 @@
 
                         <div class="diceContainer">
                             <div class="diceFaces">
-                                <img id="computerDiceOne" class="diceFace" src="images/dice1.png" alt="a picture of a dice face">
-                                <img id="computerDiceTwo" class="diceFace" src="images/dice1.png" alt="a picture of a dice face">
+                                <img id="computerDiceOne" class="diceFace" src="images/dice1.png"
+                                    alt="a picture of a dice face">
+                                <img id="computerDiceTwo" class="diceFace" src="images/dice1.png"
+                                    alt="a picture of a dice face">
                             </div>
                             <p id="computerRound">Round score: 0</p>
                         </div>
@@ -84,11 +93,11 @@
                     <form id="form">
                         <label for="name">Player name:</label>
                         <input type="text" id="name" name="name">
-                      </form>
+                    </form>
 
-                      <p id="warning"></p>
+                    <p id="warning"></p>
 
-                      <button id="select">Select</button>
+                    <button id="select">Select</button>
                 </aside>
             </div>
         </section>

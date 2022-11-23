@@ -45,6 +45,26 @@ const characterSelectScreen = document.getElementById("characterSelect");
 const characters = document.getElementById("characterOptions").childNodes;
 let newCharacterImage;
 
+//time out handler
+let popupTimerHandler;
+
+//variables for making the dice spin
+let spinDiceOne = document.getElementById("spinDiceOne");
+let spinDiceTwo = document.getElementById("spinDiceTwo");
+let degree = 0;
+
+requestAnimationFrame(spinDice);
+
+//rotates the dice
+function spinDice() {
+    setTimeout(function () {
+        spinDiceOne.style.transform = `rotate(${degree}deg)`;
+        spinDiceTwo.style.transform = `rotate(${degree*-1}deg)`;
+        degree += 2;
+       requestAnimationFrame(spinDice);
+    }, 30);
+}
+
 //enables character image changing
 characters.forEach(element => {
     element.addEventListener("click", function () {
@@ -101,10 +121,8 @@ function selectCharacterConfirmation() {
             document.querySelectorAll(".portrait")[0].src = newCharacterImage;
         }
 
-        //TODO: CHANGE TO ANIMATION!!!!!!!!!!!
-        characterSelectScreen.style.transition = "opacity 1s";
-        characterSelectScreen.style.opacity = 0;
-        characterSelectScreen.style.display = "none";
+        //fade out the popup
+        fadeOut(characterSelectScreen, 0);
 
         //enable buttons
         enableAllGameButtons();
@@ -136,10 +154,8 @@ changeCharacter.addEventListener("click", changePlayerCharacter);
 function changePlayerCharacter() {
     disableAllGameButtons();
 
-    //TODO: CHANGE TO ANIMATION!!!!!!!!!!!
-    characterSelectScreen.style.transition = "opacity 1s";
-    characterSelectScreen.style.opacity = 1;
-    characterSelectScreen.style.display = "flex";
+    //fade in the popup
+    fadeIn(characterSelectScreen, 1);
 }
 
 //rolls the dice
@@ -210,10 +226,8 @@ function endGame() {
     changeCharacter.disabled = true;
     changeCharacter.classList.add("disabled");
 
-    //TODO: CHANGE TO ANIMATION!!!!!!!!!!!
-    endGamePopup.style.transition = "opacity 2s";
-    endGamePopup.style.opacity = 1;
-    endGamePopup.style.display = "flex";
+    //fade in the popup
+    fadeIn(endGamePopup, 2);
 
     //determines who won or if it was a draw
     if (humanPlayer.getTotalScore() > computerPlayer.getTotalScore()) {
@@ -252,8 +266,30 @@ function resetGame() {
     //reset end game window
     endGamePopup.innerHTML = "";
 
-    //TODO: CHANGE TO ANIMATION!!!!!!!!!!!
-    endGamePopup.style.transition = "opacity 0s";
-    endGamePopup.style.opacity = 0;
-    endGamePopup.style.display = "none";
+    //fade out the popup
+    fadeOut(endGamePopup, 0);
+}
+
+//fades in the pop up
+function fadeIn(popup, delay) {
+    clearTimeout(popupTimerHandler);
+
+    popupTimerHandler = setTimeout(function () {
+        popup.style.transition = `opacity ${delay}s`;
+        popup.style.opacity = 1;
+    }, 0);
+
+    popup.style.display = "flex";
+}
+
+// fades out the popup
+function fadeOut(popup, delay) {
+    clearTimeout(popupTimerHandler);
+
+    popupTimerHandler = setTimeout(function () {
+        popup.style.transition = `opacity ${delay}s`;
+        popup.style.opacity = 0;
+    }, 0);
+
+    popup.style.display = "none";
 }

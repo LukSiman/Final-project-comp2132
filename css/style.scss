@@ -249,6 +249,21 @@ ID SELECTORS
 	text-align: center;
 	@include specialText(rgb(207, 221, 16), rgb(173, 2, 2));
 	font-size: 3em;
+	margin-top: 10px;
+}
+
+#titleHeader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 40px;
+
+	img {
+		max-width: 3em;
+		max-height: 3em;
+		border: 1px solid yellow;
+		border-radius: 10px;
+	}
 }
 
 #gameBoard {
@@ -300,7 +315,7 @@ ID SELECTORS
 	background-color: rgb(35, 16, 119, 0.9);
 	@include retroBorder(rgb(226, 194, 12), 15px, rgb(153, 129, 24));
 	opacity: 0;
-	display: flex;
+	// display: none;
 	flex-direction: column;
 	align-items: center;
 	max-width: 100%;
@@ -313,13 +328,14 @@ ID SELECTORS
 		width: 500px;
 	}
 
-	#victory{
+	#victory {
 		width: 350px;
 	}
 }
 
 #characterSelect {
 	opacity: 1;
+	display: flex;
 	row-gap: 25px;
 	text-align: center;
 }
@@ -437,6 +453,18 @@ MEDIA
 	#computerScore {
 		height: 80px;
 	}
+
+	#titleHeader {
+		column-gap: 20px;
+
+		img:first-of-type {
+			margin-left: 20px;
+		}
+
+		img:last-of-type {
+			margin-right: 20px;
+		}
+	}
 }
 
 @media screen and (max-width: 500px) {
@@ -472,7 +500,7 @@ MEDIA
 			width: 300px;
 		}
 
-		#victory{
+		#victory {
 			width: 250px;
 		}
 	}
@@ -543,7 +571,7 @@ MEDIA
 			width: 200px;
 		}
 
-		#victory{
+		#victory {
 			width: 200px;
 		}
 	}
@@ -580,6 +608,15 @@ MEDIA
 		button {
 			padding: 5px;
 			font-size: 1em;
+		}
+	}
+
+	#titleHeader {
+		column-gap: 10px;
+
+		img{
+			width: 2.4em;
+			margin: 0px;
 		}
 	}
 }
